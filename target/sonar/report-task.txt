@@ -1,0 +1,6 @@
+projectKey=dev_rp:cwf_m2_maven_web
+serverUrl=http://localhost:9000
+serverVersion=9.6.1.59531
+dashboardUrl=http://localhost:9000/dashboard?id=dev_rp%3Acwf_m2_maven_web
+ceTaskId=AYO8UCkoo37Vnmwj2xEo
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYO8UCkoo37Vnmwj2xEo
