@@ -4,17 +4,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>eCommerce</title>
 </head>
 <body>
 
-<h1>Hello JSP and Servlet!</h1>
-<form action="HelloServlet" method="post">
-Enter your name: <input type="text" name="yourName" size="20">
-<input type="submit" value="Call Servlet" />
+<h1>!Product Registration!</h1>
+<form action="ProductServlet" method="post">
+Enter Product Name: <input type="text" name="productName" size="20">
+<input type="submit" value="Product Registered" />
 </form>
 
- <button onclick="window.location.href='http://localhost:8085/lesson14/register.jsp';"> Click to go to user registration </button>
+ <button onclick="window.location.href='http://localhost:8085/lesson14/register.jsp';"> Click to go to Product Registration </button>
 
 </body>
 </html>
