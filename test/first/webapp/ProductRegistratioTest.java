@@ -16,8 +16,8 @@ class ProductRegistratioTest {
 	private Product p3;
 	private Product p4;
 	
-	private final int PRODUCT_COLLECTION_SIZE = 4;
-	private final int PRODUCT_CAPACITY_LIMIT = 4;  
+	private final int SIZE = 4;
+	private final int LIMIT = 4;  
 	//if you want to run once per class - > like creating a database connection or start up of server then you might want to annotate with at before all
 	
 	@BeforeEach
@@ -42,53 +42,45 @@ class ProductRegistratioTest {
 
 	@Test
 	void testProductRegistration() {
-		//fail("Not yet implemented");
 		System.out.println("@Test: testProductrRegistration");
 	    assertTrue(true);  // try true and false
 	}
 
 	@Test
 	void testProductRegistrationInt() {
-		//fail("Not yet implemented");
 		System.out.println("@Test: testProductrRegistrationInt");
 		assertTrue(true);  // try true and false
 	}
 
 	@Test
 	void testGetProducts() {
-		// fail("Not yet implemented");
 		List<Product> testPR = pr.getProducts();
 		//Assert that the Song Collection is not empty after invoking getSongs function 
-		//assertTrue(!testSc.isEmpty());
 		assertFalse(testPR.isEmpty());
 		// assert that Song collection size contains the correct number of songs inside
-		assertEquals(testPR.size(),PRODUCT_COLLECTION_SIZE);
+		assertEquals(testPR.size(),SIZE);
 	}
 
 	@Test
 	void testAddProduct() {
-		//fail("Not yet implemented");
 		List<Product> testPR = pr.getProducts();
 		//Assert that Song collection is equals to song collection size 4
-		assertEquals(testPR.size(), PRODUCT_COLLECTION_SIZE);
+		assertEquals(testPR.size(), SIZE);
 		//Act - Add song function to add 1 additional song
 		pr.addProduct(p1);
 		// Assert that Song Collection is equals to song collection size 4 + 1
 		// We assert that the initial song collection size is now 5
-		assertEquals(pr.getProducts().size(), PRODUCT_COLLECTION_SIZE);
+		assertEquals(pr.getProducts().size(), SIZE);
 		//means "a passed parameter must not be null": if it is null then the test case fails.
 		assertNotNull(p1);
 		//Assert that Song Collection cannot be more than 5 (max capacity) 
-		assertEquals(pr.getProducts().size(),PRODUCT_CAPACITY_LIMIT);
+		assertEquals(pr.getProducts().size(),LIMIT);
 	}
 
 	@Test
 	void testSortProductsByName() {
-		//fail("Not yet implemented");
-		
 		//Act 
 		List<Product> testPR = pr.sortProductsByName();
-		
 		
 		//Arrange 
 		String newProductName1 = testPR.get(0).getName();
@@ -106,7 +98,6 @@ class ProductRegistratioTest {
 
 	@Test
 	void testSortProductsByPrice() {
-		// fail("Not yet implemented");
 		//Act 
 		List<Product> testPR = pr.sortProductsByPrice();
 			
@@ -125,7 +116,6 @@ class ProductRegistratioTest {
 
 	@Test
 	void testFindProdcutsById() {
-		// fail("Not yet implemented");
 		//Act 
 		Product validId = pr.findProdcutsById("0003");
 		Product invalidId = pr.findProdcutsById("Invalid id");
@@ -140,8 +130,6 @@ class ProductRegistratioTest {
 
 	@Test
 	void testFindProductByName() {
-		// fail("Not yet implemented");
-		
 		Product validProduct = pr.findProductByName("milk");
 		Product invalidProduct = pr.findProductByName("Invalid Product Name");
 			

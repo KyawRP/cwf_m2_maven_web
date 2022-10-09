@@ -25,14 +25,10 @@ import javax.servlet.RequestDispatcher;
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private DatabaseOperations databaseOperations;
-	
     private String jdbcURL = "jdbc:mysql://localhost:3306/testing";
     private String jdbcUsername = "root";
     private String jdbcPassword = "";
 
-    private static final String INSERT_USERS_SQL = "INSERT INTO userdetails2" + "  (name, password, email, language) VALUES " +
-        " (?, ?, ?, ?);";
     private static final String SELECT_USER_BY_ID = "select name,password,email,language from userdetails2 where name =?";
     private static final String SELECT_ALL_USERS = "select * from userdetails2";
     private static final String DELETE_USERS_SQL = "delete from userdetails2 where name = ?;";
@@ -61,8 +57,6 @@ public class UserServlet extends HttpServlet {
     public UserServlet() {
         super();
         // TODO Auto-generated constructor stub
-        
-        databaseOperations = new DatabaseOperations();
     }
 
 	/**
@@ -135,16 +129,11 @@ public class UserServlet extends HttpServlet {
             } catch (SQLException e) {
                 printSQLException(e);
             }
-		//List < User > listUser = databaseOperations.selectAllUsers();
-        
+	        
 		System.out.println("total user is: " + users.size());
 		request.setAttribute("listUser", users);
 		request.getRequestDispatcher("/userManagement.jsp").forward(request, response);
-		
-		
-		
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("userManagement.jsp");
-		//dispatcher.forward(request, response);
+	
 	}
 
 	//method to redirect to register page
