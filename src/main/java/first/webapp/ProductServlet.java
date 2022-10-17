@@ -25,6 +25,7 @@ public class ProductServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(Hhttp://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2963451ttpServletRequest request, HttpServletResponse response)
 	 */
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
@@ -32,13 +33,18 @@ public class ProductServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+    @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
-		
+		try {
 		String productName = request.getParameter("productName");
 		PrintWriter writer = response.getWriter();
-		writer.println("<h1>Registered Product Name, " + productName + "</h1>");
+		writer.println("<h1>Registered Product Name, Bicycle" + productName + "</h1>");
 		writer.close();
+		}
+		catch(IOException iex) {
+			System.out.println(iex);  
+		}
 	}
 
 }
